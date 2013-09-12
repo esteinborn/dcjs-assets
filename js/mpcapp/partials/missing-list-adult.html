@@ -1,0 +1,21 @@
+<div feedurl="http://nydcjsdev.devcloud.acquia-sites.com/adultlist"></div>
+<div class="missing-person-wrapper">
+  <h1>Missing Children and College Students</h1>
+  <div class="loading" style="position:absolute; width:300px;">
+    <h3 class="loadingText"><br><br>Loading List...</h3>
+  </div>
+  <ul class="missing-person-ul ng-fade">
+    <li ng-repeat="person in caselist | orderObjectByAlpha:'ln'" class="missing-person-li">
+      <a href="#/missing-vulnerable-adult/{{person.title}}" class="node-missing-person missing-article clearfix">
+        <h2 class="node-title">{{person.title}}</h2>
+        <p class="person-image"><img ng-src="{{person.img}}"></p>
+        <p class="person-details">
+          <span class="field-label">Missing From:</span> {{person.misFm}}<br>
+          <span class="field-label">Date Missing:</span> {{person.dtM}}<br>
+          <span class="field-label">Circumstances:</span> {{person.circ}}
+        </p>
+        <p class="last-name">{{person.ln}}</p>
+      </a>
+    </li>
+  </ul>
+</div>

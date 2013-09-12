@@ -1,0 +1,29 @@
+<div feedurl="http://nydcjsdev.devcloud.acquia-sites.com/alertlist"></div>
+<div class="missing-person-wrapper alert-list">
+  <h1>Current Missing Person Alerts</h1>
+  <h3 class="ng-fade">There <span ng-if="caselistlength > 1 || caselistlength === 0">are</span> <span ng-if="caselistlength === 1">is</span>  currently <span ng-if="caselistlength > 0">{{caselistlength}}</span> <span ng-if="caselistlength === 0">no</span> active alert<span ng-if="caselistlength > 1 || caselistlength === 0">s</span>. <span ng-if="caselistlength >= 1">Click <span ng-if="caselistlength === 1">the</span> <span ng-if="caselistlength > 1">an</span> alert to see more details.</span></h3>
+  <div class="loading" style="position:absolute; width:300px;">
+    <h3 class="loadingText"><br><br>Loading List...</h3>
+  </div>
+  <ul class="missing-person-ul ng-fade">
+    <li ng-repeat="person in caselist | orderObjectByAlpha:'type'" class="missing-person-li">
+      <a ng-if="person.type === 'AMBER Alert'" href="http://amber.ny.gov/" class="node-missing-person missing-article amber-link clearfix">
+        <h3 class="case-type-details">There is an Active AMBER Alert:</h3>
+        <p><img src="/images/missing-alert-images/amber-450x300.jpg"></p>
+      </a>
+      <a ng-if="person.type !== 'AMBER Alert'" href="#/alerts/{{person.title}}" class="node-missing-person missing-article clearfix">
+        <h2 class="node-title">{{person.title}}</h2>
+        <p class="person-image"><img ng-src="{{person.img}}"></p>
+        <p ng-if="person.type" class="person-details case-type-details">{{person.type}}</p>
+        <p class="person-details">
+          <span class="field-label">Missing From:</span> {{person.misFm}}<br>
+          <span class="field-label">Date Missing:</span> {{person.dtM}}
+        </p>
+      </a>
+    </li>
+  </ul>
+  <div ng-if="caselistlength === 0" class="view-empty">
+    <h3>But please take a moment to view our current list of missing cases:</h3>
+    <p class="noprint"><a href="#/missing-child" class="cta cta-green"><span class="cta-icon icon-go">View Missing Children</span></a> &nbsp; <a href="#/missing-vulnerable-adult" class="cta cta-green"><span class="cta-icon icon-go">View Vulnerable Adults</span></a></p>
+  </div>
+</div>

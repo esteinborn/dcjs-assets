@@ -1,0 +1,22 @@
+// Module configurations
+// -------------------------
+//$breakpoint-to-ems: 'true';
+
+$size-default: 16px;
+$size-small:   12px;
+$size-half:    8px;
+$size-tiny:    4px;
+
+// Key Breakpints
+// -------------------------
+$print-media: 'print';
+$size-mobile: max-width 50em; // 800px
+$size-mobile-small: max-width 46em; // 736px
+$size-mobile-smaller: max-width 38em; // 608 px
+$size-mobile-smallest: max-width 30em; // 480 px
+$size-print: max-width 48em; // 768px
+
+// Colors
+// -------------------------
+$color-alert: red;
+$color-light-gray: #CCC;

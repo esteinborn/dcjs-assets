@@ -1,0 +1,309 @@
+<div feedurl="http://nydcjsdev.devcloud.acquia-sites.com/adultdetails"></div>
+<div class="loading" style="position:absolute">
+  <h3 class="loadingText"><br><br>Loading Details...</h3>
+</div>
+<div class="mpcPortal page-node node-type-missing-person not-alert-default">
+  <article class="node-missing-person clearfix" style="display:none">
+    <div class="field case-type">
+      <div class="field-items">{{person.type}}</div>
+    </div>
+    <div class="field field-label-inline clearfix missing-from">
+      <div class="field-label">Missing From:&nbsp;</div>
+      <div class="field-items">{{person.misFm}}</div>
+    </div>
+    <div class="field field-label-inline clearfix date-missing">
+      <div class="field-label">Date Missing:&nbsp;</div>
+      <div class="field-items">{{person.dtM}}</div>
+    </div>
+    <div class="people-container clearfix">
+      <div class="person-container clearfix">
+        <div class="person-name-container">
+          <div class="field person-name">{{person.title}}</div>
+        </div>
+        <div class="field person-image">
+          <img ng-src="{{person.img}}">
+        </div>
+        <div class="person-details">
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">DOB:&nbsp;</div>
+            <div class="field-items">{{person.dob}}</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Sex:&nbsp;</div>
+            <div class="field-items">{{person.sx}}</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">HGT:&nbsp;</div>
+            <div class="field-items">{{person.ht}}</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">WGT:&nbsp;</div>
+            <div class="field-items">{{person.wt}}</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Hair:&nbsp;</div>
+            <div class="field-items">{{person.hc}}</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Eyes:&nbsp;</div>
+            <div class="field-items">{{person.ec}}</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Race:&nbsp;</div>
+            <div class="field-items">{{person.rc}}</div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="person-container clearfix">
+        <div class="person-name-container">
+          <div class="field person-name">Joseph A Helt</div>
+        </div>
+        <div class="field person-image">
+          <img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/styles/missing-person-full/public/hall_jordan.jpg?itok=7CXL-VwZ" width="248" height="300">
+        </div>
+        <div class="person-details">
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">DOB:&nbsp;</div>
+            <div class="field-items">07/18/1979</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Sex:&nbsp;</div>
+            <div class="field-items">Male</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">HGT:&nbsp;</div>
+            <div class="field-items">5&#039;10&quot;</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">WGT:&nbsp;</div>
+            <div class="field-items">189 lbs.</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Hair:&nbsp;</div>
+            <div class="field-items">Blonde</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Eyes:&nbsp;</div>
+            <div class="field-items">Blue</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Race:&nbsp;</div>
+            <div class="field-items">American Indian or Alaskan Native</div>
+          </div>
+        </div>
+      </div>
+      <div class="person-container clearfix">
+        <div class="person-name-container">
+          <div class="field person-name">Joseph A Helt</div>
+        </div>
+        <div class="field person-image">
+          <img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/styles/missing-person-full/public/guez_gabrielle2012.jpg?itok=lRU9RVUS" width="240" height="300">
+        </div>
+        <div class="person-details">
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">DOB:&nbsp;</div>
+            <div class="field-items">07/18/1979</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Sex:&nbsp;</div>
+            <div class="field-items">Male</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">HGT:&nbsp;</div>
+            <div class="field-items">5&#039;10&quot;</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">WGT:&nbsp;</div>
+            <div class="field-items">189 lbs.</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Hair:&nbsp;</div>
+            <div class="field-items">Blonde</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Eyes:&nbsp;</div>
+            <div class="field-items">Blue</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Race:&nbsp;</div>
+            <div class="field-items">American Indian or Alaskan Native</div>
+          </div>
+        </div>
+      </div>
+      <div class="person-container clearfix">
+        <div class="person-name-container">
+          <div class="field person-name">Joseph A Helt</div>
+        </div>
+        <div class="field person-image">
+          <img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/styles/missing-person-full/public/Guez-Abd2.jpg?itok=6xnxa4T5" width="257" height="300">
+        </div>
+        <div class="person-details">
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">DOB:&nbsp;</div>
+            <div class="field-items">07/18/1979</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Sex:&nbsp;</div>
+            <div class="field-items">Male</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">HGT:&nbsp;</div>
+            <div class="field-items">5&#039;10&quot;</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">WGT:&nbsp;</div>
+            <div class="field-items">189 lbs.</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Hair:&nbsp;</div>
+            <div class="field-items">Blonde</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Eyes:&nbsp;</div>
+            <div class="field-items">Blue</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Race:&nbsp;</div>
+            <div class="field-items">American Indian or Alaskan Native</div>
+          </div>
+        </div>
+      </div> -->
+      <div class="case-details-container clearfix">
+        <div class="field case-details other-information">
+          <div class="field-label">Other Information:&nbsp;</div>
+          <div class="field-items">{{person.other}}</div>
+        </div>
+        <div class="field field-label-inline clearfix case-details investigating-agency">
+          <div class="field-label">Investigating Agency:&nbsp;</div>
+          <div class="field-items">{{person.agency}}</div>
+        </div>
+        <div class="field field-label-inline clearfix case-details case-date">
+          <div class="field-label">Case Date:&nbsp;</div>
+          <div class="field-items">{{person.dt}}</div>
+        </div>
+        <div class="field field-label-inline clearfix case-details case-number">
+          <div class="field-label">Case Number:&nbsp;</div>
+          <div class="field-items">{{person.num}}</div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="circumstances-container clearfix">
+      <div class="field abd-circumstances">Last Seen With Child</div>
+      <div class="person-container clearfix">
+        <div class="person-name-container">
+          <div class="field person-name">Emily G. Juan</div>
+        </div>
+        <div class="field person-image">
+          <img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/styles/missing-person-full/public/Juan_Emily_ab.jpg?itok=hQvJX-Z8" width="250" height="300">
+        </div>
+        <div class="person-details">
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">DOB:&nbsp;</div>
+            <div class="field-items">09/13/1977</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Sex:&nbsp;</div>
+            <div class="field-items">Female</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">HGT:&nbsp;</div>
+            <div class="field-items">1&#039;13&quot;</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">WGT:&nbsp;</div>
+            <div class="field-items">120 lbs.</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Hair:&nbsp;</div>
+            <div class="field-items">Gray</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Eyes:&nbsp;</div>
+            <div class="field-items">Maroon</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Race:&nbsp;</div>
+            <div class="field-items">Asian or Pacific Islander</div>
+          </div>
+        </div>
+      </div>
+      <div class="person-container clearfix">
+        <div class="person-name-container">
+          <div class="field person-name">Emily G. Juan</div>
+        </div>
+        <div class="field person-image">
+          <img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/styles/missing-person-full/public/Hoffman_A_ABD_0.jpg?itok=vaWiIc5Q" width="210" height="300">
+        </div>
+        <div class="person-details">
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">DOB:&nbsp;</div>
+            <div class="field-items">09/13/1977</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Sex:&nbsp;</div>
+            <div class="field-items">Female</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">HGT:&nbsp;</div>
+            <div class="field-items">1&#039;13&quot;</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">WGT:&nbsp;</div>
+            <div class="field-items">120 lbs.</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Hair:&nbsp;</div>
+            <div class="field-items">Gray</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Eyes:&nbsp;</div>
+            <div class="field-items">Maroon</div>
+          </div>
+          <div class="field field-label-inline clearfix">
+            <div class="field-label">Race:&nbsp;</div>
+            <div class="field-items">Asian or Pacific Islander</div>
+          </div>
+        </div>
+      </div>
+      <div class="vehicle-container clearfix">
+        <div class="field vehicle-image">
+          <img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/imgres.jpg" width="275" height="183">
+        </div>
+        <div class="field vehicle-text">
+          <div class="field-label">Similar to Vehicle Shown:&nbsp;</div>
+          <div class="field-items">NY REG 123 4567</div>
+        </div>
+      </div>
+      <div class="vehicle-container vehicle-2 clearfix">
+        <div class="field vehicle-image">
+          <img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/imgres_0.jpg" width="275" height="183">
+        </div>
+        <div class="field vehicle-text">
+          <div class="field-label">Similar to Vehicle Shown:&nbsp;</div>
+          <div class="field-items">MA Reg 123 4567</div>
+        </div>
+      </div>
+      <div class="field abd-other-info">
+        <div class="field-label">Other Information:&nbsp;</div>
+        <div class="field-items">Other Information about the Abductor.</div>
+      </div>
+    </div>
+    <div class="alert-footer missingFooter">
+      <div class="field contact-person">Contact Person</div>
+      <div class="field contact-number">1-800-123-1234 or 911</div>
+      <div class="field contact-image">
+        <img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/default_images/mpc-logo.png" alt="">
+      </div>
+    </div> -->
+    <div class="missingFooter non-alert">
+      <div class="contactInfo">
+        <h3 class="contact-person">NYS Missing Persons Clearinghouse</h3>
+        <h4 class="contact-number">1-800-346-3543</h4>
+        <h5 class="contact-url">www.criminaljustice.ny.gov</h5>
+      </div>
+      <div class="contact-image">
+        <img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/default_images/mpc-logo.png">
+      </div>
+    </div>
+  </article>
+  <!-- /.node -->

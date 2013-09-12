@@ -1,7 +1,7 @@
-*
+/*
 
-!scss/
-!js/
-!missing/missingapp/
+!/scss/
+!/js/
+!/missing/missingapp/
 !.gitignore
 !.gitattributes
