@@ -83,6 +83,7 @@ function MissingCtrl($scope, $routeParams, $http, $sanitize) {
         setTimeout(function(){
           $('.missing-person-ul').listnav({
             filterSelector: ".last-name",
+            removeDisabled: true,
             includeNums: false
           });
         }, 1);

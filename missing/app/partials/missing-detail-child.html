@@ -3,174 +3,137 @@
   <div class="loading" style="position:absolute; width:300px;">
     <h3 class="loadingText"><br><br>Loading Details...</h3>
   </div>
-  <div class="mpcPortal page-node node-type-missing-person not-alert-default ng-fade">
-    <div class="{{person.abd}} {{person.a_multi}} {{person.multi}} {{person.vi}} {{person.is_alert}}">
-      <div class="node-missing-person clearfix">
-        <div class="field case-type">
-          <div class="field-items">{{person.type}}</div>
+  <div class="mpcPortal page-node node-type-missing-person not-alert-default ng-fade {{person.abd}} {{person.a_multi}} {{person.multi}} {{person.vi}} {{person.is_alert}}">
+    <div class="node-missing-person clearfix">
+      <p class="case-type">{{person.type}}</p>
+      <p class="clearfix missing-from"><strong>Missing From:</strong> {{person.misFm}}</p>
+      <p class="clearfix date-missing"><strong>Date Missing:</strong> {{person.dtM}}</p>
+      <div class="people-container clearfix">
+        <div class="person-container clearfix">
+          <p class="person-full-name">{{person.title}}</p>
+          <p class="person-image"><img ng-src="{{person.img}}"></p>
+          <p class="person-details">
+            <strong>DOB:</strong> {{person.dob}}<br>
+            <strong>Sex:</strong> {{person.sx}}<br>
+            <strong>HGT:</strong> {{person.ht}}<br>
+            <strong>WGT:</strong> {{person.wt}}<br>
+            <strong>Hair:</strong> {{person.hc}}<br>
+            <strong>Eyes:</strong> {{person.ec}}<br>
+            <strong>Race:</strong> {{person.rc}}
+          </p>
         </div>
-        <div class="field field-label-inline clearfix missing-from">
-          <div class="field-label">Missing From:&nbsp;</div>
-          <div class="field-items">{{person.misFm}}</div>
+        <div ng-if="person.fn2" class="person-container clearfix">
+          <p class="person-full-name">{{person.fn2}} <span ng-if="person.mn2">{{person.mn2}}</span> {{person.ln2}}</p>
+          <p class="person-image"><img ng-src="{{person.img2}}"></p>
+          <p class="person-details">
+            <strong>DOB:</strong> {{person.dob2}}<br>
+            <strong>Sex:</strong> {{person.sx2}}<br>
+            <strong>HGT:</strong> {{person.ht2}}<br>
+            <strong>WGT:</strong> {{person.wt2}}<br>
+            <strong>Hair:</strong> {{person.hc2}}<br>
+            <strong>Eyes:</strong> {{person.ec2}}<br>
+            <strong>Race:</strong> {{person.rc2}}
+          </p>
         </div>
-        <div class="field field-label-inline clearfix date-missing">
-          <div class="field-label">Date Missing:&nbsp;</div>
-          <div class="field-items">{{person.dtM}}</div>
+        <div ng-if="person.fn3" class="person-container clearfix">
+          <p class="person-full-name">{{person.fn3}} <span ng-if="person.mn3">{{person.mn3}}</span> {{person.ln3}}</p>
+          <p class="person-image"><img ng-src="{{person.img3}}"></p>
+          <p class="person-details">
+            <strong>DOB:</strong> {{person.dob3}}<br>
+            <strong>Sex:</strong> {{person.sx3}}<br>
+            <strong>HGT:</strong> {{person.ht3}}<br>
+            <strong>WGT:</strong> {{person.wt3}}<br>
+            <strong>Hair:</strong> {{person.hc3}}<br>
+            <strong>Eyes:</strong> {{person.ec3}}<br>
+            <strong>Race:</strong> {{person.rc3}}
+          </p>
         </div>
-        <div class="people-container clearfix">
-          <div class="person-container clearfix">
-            <p class="person-full-name">{{person.title}}</p>
-            <p class="person-image"><img ng-src="{{person.img}}"></p>
-            <p class="person-details">
-              <span class="field-label">DOB:</span> {{person.dob}}<br>
-              <span class="field-label">Sex:</span> {{person.sx}}<br>
-              <span class="field-label">HGT:</span> {{person.ht}}<br>
-              <span class="field-label">WGT:</span> {{person.wt}}<br>
-              <span class="field-label">Hair:</span> {{person.hc}}<br>
-              <span class="field-label">Eyes:</span> {{person.ec}}<br>
-              <span class="field-label">Race:</span> {{person.rc}}
-            </p>
-          </div>
-          <div ng-if="person.fn2" class="person-container clearfix">
-            <p class="person-full-name">{{person.fn2}} <span ng-if="person.mn2">{{person.mn2}}</span> {{person.ln2}}</p>
-            <p class="person-image"><img ng-src="{{person.img2}}"></p>
-            <p class="person-details">
-              <span class="field-label">DOB:</span> {{person.dob2}}<br>
-              <span class="field-label">Sex:</span> {{person.sx2}}<br>
-              <span class="field-label">HGT:</span> {{person.ht2}}<br>
-              <span class="field-label">WGT:</span> {{person.wt2}}<br>
-              <span class="field-label">Hair:</span> {{person.hc2}}<br>
-              <span class="field-label">Eyes:</span> {{person.ec2}}<br>
-              <span class="field-label">Race:</span> {{person.rc2}}
-            </p>
-          </div>
-          <div ng-if="person.fn3" class="person-container clearfix">
-            <p class="person-full-name">{{person.fn3}} <span ng-if="person.mn3">{{person.mn3}}</span> {{person.ln3}}</p>
-            <p class="person-image"><img ng-src="{{person.img3}}"></p>
-            <p class="person-details">
-              <span class="field-label">DOB:</span> {{person.dob3}}<br>
-              <span class="field-label">Sex:</span> {{person.sx3}}<br>
-              <span class="field-label">HGT:</span> {{person.ht3}}<br>
-              <span class="field-label">WGT:</span> {{person.wt3}}<br>
-              <span class="field-label">Hair:</span> {{person.hc3}}<br>
-              <span class="field-label">Eyes:</span> {{person.ec3}}<br>
-              <span class="field-label">Race:</span> {{person.rc3}}
-            </p>
-          </div>
-          <div ng-if="person.fn4" class="person-container clearfix">
-            <p class="person-full-name">{{person.fn4}} <span ng-if="person.mn4">{{person.mn4}}</span> {{person.ln4}}</p>
-            <p class="person-image"><img ng-src="{{person.img4}}"></p>
-            <p class="person-details">
-              <span class="field-label">DOB:</span> {{person.dob4}}<br>
-              <span class="field-label">Sex:</span> {{person.sx4}}<br>
-              <span class="field-label">HGT:</span> {{person.ht4}}<br>
-              <span class="field-label">WGT:</span> {{person.wt4}}<br>
-              <span class="field-label">Hair:</span> {{person.hc4}}<br>
-              <span class="field-label">Eyes:</span> {{person.ec4}}<br>
-              <span class="field-label">Race:</span> {{person.rc4}}
-            </p>
-          </div>
-          <div class="case-details-container clearfix">
-            <p class="case-details other-information">
-              <span class="field-label">Other Information:</span> {{person.other}}<br>
-              <span class="field-label">Investigating Agency:</span> {{person.agency}}
-            </p>
-            <div class="field field-label-inline clearfix case-details case-date">
-              <div class="field-label">Case Date:&nbsp;</div>
-              <div class="field-items">{{person.dt}}</div>
-            </div>
-            <div class="field field-label-inline clearfix case-details case-number">
-              <div class="field-label">Case Number:&nbsp;</div>
-              <div class="field-items">{{person.num}}</div>
-            </div>
-          </div>
+        <div ng-if="person.fn4" class="person-container clearfix">
+          <p class="person-full-name">{{person.fn4}} <span ng-if="person.mn4">{{person.mn4}}</span> {{person.ln4}}</p>
+          <p class="person-image"><img ng-src="{{person.img4}}"></p>
+          <p class="person-details">
+            <strong>DOB:</strong> {{person.dob4}}<br>
+            <strong>Sex:</strong> {{person.sx4}}<br>
+            <strong>HGT:</strong> {{person.ht4}}<br>
+            <strong>WGT:</strong> {{person.wt4}}<br>
+            <strong>Hair:</strong> {{person.hc4}}<br>
+            <strong>Eyes:</strong> {{person.ec4}}<br>
+            <strong>Race:</strong> {{person.rc4}}
+          </p>
         </div>
-        <div ng-if="person.abd || person.vi" class="circumstances-container clearfix">
-          <div class="field abd-circumstances">
-            {{person.a_circ}}
-          </div>
-          <div ng-if="person.a_fn" class="person-container clearfix">
-            <div class="person-name-container">
-              <div class="field person-name">{{person.a_fn}} <span ng-if="person.a_mn">{{person.a_mn}}</span> {{person.a_ln}}</div>
-            </div>
-            <div class="field person-image">
-              <img ng-src="{{person.a_img}}">
-            </div>
-            <p class="person-details">
-              <span class="field-label">DOB:</span> {{person.a_dob}}<br>
-              <span class="field-label">Sex:</span> {{person.a_sx}}<br>
-              <span class="field-label">HGT:</span> {{person.a_ht}}<br>
-              <span class="field-label">WGT:</span> {{person.a_wt}}<br>
-              <span class="field-label">Hair:</span> {{person.a_hc}}<br>
-              <span class="field-label">Eyes:</span> {{person.a_ec}}<br>
-              <span class="field-label">Race:</span> {{person.a_rc}}
-            </p>
-          </div>
-          <div ng-if="person.a_fn2" class="person-container clearfix">
-            <div class="person-name-container">
-              <div class="field person-name">
-                {{person.a_fn2}} <span ng-if="person.a_mn2">{{person.a_mn2}}</span> {{person.a_ln2}}
-              </div>
-            </div>
-            <div class="field person-image">
-              <img ng-src="{{person.a_img2}}">
-            </div>
-            <p class="person-details">
-              <span class="field-label">DOB:</span> {{person.a_dob2}}<br>
-              <span class="field-label">Sex:</span> {{person.a_sx2}}<br>
-              <span class="field-label">HGT:</span> {{person.a_ht2}}<br>
-              <span class="field-label">WGT:</span> {{person.a_wt2}}<br>
-              <span class="field-label">Hair:</span> {{person.a_hc2}}<br>
-              <span class="field-label">Eyes:</span> {{person.a_ec2}}<br>
-              <span class="field-label">Race:</span> {{person.a_rc2}}
-            </p>
-          </div>
-          <div ng-if="person.vi" class="vehicle-container clearfix">
-            <div class="field vehicle-image">
-              <img ng-src="{{person.vimg}}">
-            </div>
-            <div class="field vehicle-text">
-              <div class="field-label">Similar to Vehicle Shown:&nbsp;</div>
-              <div class="field-items">{{person.vr}}</div>
-            </div>
-          </div>
-          <div ng-if="person.vimg2" class="vehicle-container vehicle-2 clearfix">
-            <div class="field vehicle-image">
-              <img ng-src="{{person.vimg2}}">
-            </div>
-            <div class="field vehicle-text">
-              <div class="field-label">Similar to Vehicle Shown:&nbsp;</div>
-              <div class="field-items">{{person.vr2}}</div>
-            </div>
-          </div>
-          <div ng-if="person.a_info" class="field abd-other-info">
-            <div class="field-label">Other Information:&nbsp;</div>
-            <div class="field-items">{{person.a_info}}</div>
-          </div>
+        <div class="case-details-container clearfix">
+          <p class="case-details other-information">
+            <strong>Other Information:</strong> {{person.other}}<br>
+            <strong>Investigating Agency:</strong> {{person.agency}}
+          </p>
+          <p class="clearfix case-details case-date">
+            <strong>Case Date:</strong> {{person.dt}}
+          </p>
+          <p class="clearfix case-details case-number">
+            <strong>Case Number:</strong> {{person.num}}
+          </p>
         </div>
-        <div ng-if="person.alert_cnum" class="alert-footer missingFooter">
-          <div class="field contact-person">
-            {{person.alert_cperson}}
-          </div>
-          <div class="field contact-number">
-            {{person.alert_cnum}}
-          </div>
-          <div class="field contact-image">
-            <img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/default_images/mpc-logo.png" alt="">
-          </div>
+      </div>
+      <div ng-if="person.abd || person.vi" class="circumstances-container clearfix">
+        <p class="abd-circumstances">{{person.a_circ}}</p>
+        <div ng-if="person.a_fn" class="person-container clearfix">
+          <p class="person-full-name">{{person.a_fn}} <span ng-if="person.a_mn">{{person.a_mn}}</span> {{person.a_ln}}</p>
+          <p class="person-image"><img ng-src="{{person.a_img}}"></p>
+          <p class="person-details">
+            <strong>DOB:</strong> {{person.a_dob}}<br>
+            <strong>Sex:</strong> {{person.a_sx}}<br>
+            <strong>HGT:</strong> {{person.a_ht}}<br>
+            <strong>WGT:</strong> {{person.a_wt}}<br>
+            <strong>Hair:</strong> {{person.a_hc}}<br>
+            <strong>Eyes:</strong> {{person.a_ec}}<br>
+            <strong>Race:</strong> {{person.a_rc}}
+          </p>
         </div>
-        <div class="missingFooter non-alert">
-          <div class="contactInfo">
-            <h3 class="contact-person">NYS Missing Persons Clearinghouse</h3>
-            <h4 class="contact-number">1-800-346-3543</h4>
-            <h5 class="contact-url">www.criminaljustice.ny.gov</h5>
-          </div>
-          <div class="contact-image">
-            <img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/default_images/mpc-logo.png">
-          </div>
+        <div ng-if="person.a_fn2" class="person-container clearfix">
+           <p class="person-full-name">{{person.a_fn2}} <span ng-if="person.a_mn">{{person.a_mn2}}</span> {{person.a_ln2}}</p>
+          <p class="person-image"><img ng-src="{{person.a_img2}}"></p>
+          <p class="person-details">
+            <strong>DOB:</strong> {{person.a_dob2}}<br>
+            <strong>Sex:</strong> {{person.a_sx2}}<br>
+            <strong>HGT:</strong> {{person.a_ht2}}<br>
+            <strong>WGT:</strong> {{person.a_wt2}}<br>
+            <strong>Hair:</strong> {{person.a_hc2}}<br>
+            <strong>Eyes:</strong> {{person.a_ec2}}<br>
+            <strong>Race:</strong> {{person.a_rc2}}
+          </p>
         </div>
+        <div ng-if="person.vi" class="vehicle-container clearfix">
+          <p class="vehicle-image"><img ng-src="{{person.vimg}}"></p>
+          <p class="vehicle-text">
+            <strong>Similar to Vehicle Shown:</strong><br>
+            {{person.vr}}
+          </p>
+        </div>
+        <div ng-if="person.vimg2" class="vehicle-container vehicle-2 clearfix">
+          <p class="vehicle-image"><img ng-src="{{person.vimg2}}"></p>
+          <p class="vehicle-text">
+            <strong>Similar to Vehicle Shown:</strong><br>
+           {{person.vr2}}
+          </p>
+        </div>
+        <p ng-if="person.a_info" class="abd-other-info">
+          <strong>Other Information:</strong>
+         {{person.a_info}}
+        </p>
+      </div>
+      <div ng-if="person.alert_cnum" class="alert-footer missingFooter">
+        <p class="contact-person">{{person.alert_cperson}}</p>
+        <p class="contact-number">{{person.alert_cnum}}</p>
+        <p class="contact-image"><img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/default_images/mpc-logo.png" alt=""></p>
+      </div>
+      <div class="missingFooter non-alert">
+        <div class="contactInfo">
+          <h3 class="contact-person">NYS Missing Persons Clearinghouse</h3>
+          <h4 class="contact-number">1-800-346-3543</h4>
+          <h5 class="contact-url">www.criminaljustice.ny.gov</h5>
+        </div>
+        <p class="contact-image"><img src="http://nydcjsdev.devcloud.acquia-sites.com/sites/default/files/default_images/mpc-logo.png"></p>
       </div>
     </div>
   </div>
 </div>
-

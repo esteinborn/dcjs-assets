@@ -2342,6 +2342,7 @@ body.toolbar {
 
 .node-missing-person, .missingFooter {
   font-size: $size-default;
+  color: #222;
 
   @include breakpoint($print-media) {
     color:#000;   
@@ -2349,7 +2350,6 @@ body.toolbar {
 
   p {
     padding: 0;
-    color: #222;
   }
 
   .field-label {
@@ -2755,11 +2755,14 @@ body.toolbar {
 .vehicle-container {
   width:100%;
 }
-.vehicle-text {
 
-  .field-items {
-    font-weight:700;
-    color:red;
+.vehicle-text {
+  font-weight:700;
+  color:red;
+
+  .field-label,
+  strong {
+    color:#222;  
   }
 }
 
@@ -2823,8 +2826,7 @@ body.toolbar {
     }
   }
 
-  header,
-  h2 {
+  header {
     float:right;
     width:350px;
 
@@ -2850,6 +2852,10 @@ body.toolbar {
     color: #039;
   }
 
+  p {
+    color: #222;
+  }
+  
   .lt-ie8 & a,
   .oldie & a{
     padding: 1.5em 0;

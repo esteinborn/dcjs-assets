@@ -7,14 +7,14 @@
   <ul class="missing-person-ul ng-fade">
     <li ng-repeat="person in caselist | orderObjectByAlpha:'ln'" class="missing-person-li">
       <a href="#/missing-child/{{person.title}}" class="node-missing-person missing-article clearfix">
-        <h2 class="node-title">{{person.title}}</h2>
         <p class="person-image"><img ng-src="{{person.img}}"></p>
-        <p class="person-details">
-          <span class="field-label">Missing From:</span> {{person.misFm}}<br>
-          <span class="field-label">Date Missing:</span> {{person.dtM}}<br>
-          <span class="field-label">Circumstances:</span> {{person.circ}}
-        </p>
-        <p class="last-name">{{person.ln}}</p>
+        <div class="person-details">
+          <h2>{{person.title}}</h2>
+          <p><strong>Missing From:</strong> {{person.misFm}}</p>
+          <p><strong>Date Missing:</strong> {{person.dtM}}</p>
+          <p><strong>Circumstances:</strong> {{person.circ}}</p>
+          <p class="last-name">{{person.ln}}</p>
+        </div>
       </a>
     </li>
   </ul>
