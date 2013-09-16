@@ -58,9 +58,9 @@ function MissingCtrl($scope, $routeParams, $http, $sanitize) {
     if (!isIE) {NProgress.start();}
    
     if ($routeParams.name) {
-      baseUrl = baseUrl + "/" + $routeParams.name + '?jsonp=JSON_CALLBACK';
+      baseUrl = baseUrl + "/" + $routeParams.name + '?callback=JSON_CALLBACK';
     } else {
-      baseUrl = baseUrl + '?jsonp=JSON_CALLBACK';
+      baseUrl = baseUrl + '?callback=JSON_CALLBACK';
     }
 
     $http
@@ -72,13 +72,14 @@ function MissingCtrl($scope, $routeParams, $http, $sanitize) {
       return $scope;
     }).then(function($scope) {
       
-      $(".loading").addClass("hidden"); // remove the loading message, since it's loaded now.
+      // remove the loading message, since it's loaded now.
+      $(".loading").addClass("hidden"); 
       
       if ($scope.person 
-          && $scope.person.type !== "Missing Child Alert"
-          && $scope.person.type !== "Missing College Student Alert"
-          && $scope.person.type !== "Missing Vulnerable Adult Alert"
-          && $scope.person.type !== "AMBER Alert") {
+            && $scope.person.type !== "Missing Child Alert"
+            && $scope.person.type !== "Missing College Student Alert"
+            && $scope.person.type !== "Missing Vulnerable Adult Alert"
+            && $scope.person.type !== "AMBER Alert") {
 
         setTimeout(function(){
           $('.missing-person-ul').listnav({
@@ -92,7 +93,8 @@ function MissingCtrl($scope, $routeParams, $http, $sanitize) {
 
       if (!isIE) {NProgress.done();}
 
-      $(".ng-fade").fadeIn(); // remove the loading message, since it's loaded now.
+      // remove the loading message, since it's loaded now.
+      $(".ng-fade").fadeIn();
     });
   };
 

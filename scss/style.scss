@@ -3391,6 +3391,8 @@ body.toolbar {
   padding: 6px 10px;
   background-color: #F6F8F9;
   background-image:  url(../images/list-arrow.png);
+  background-repeat: no-repeat;
+  background-position: 95% center;
   background: url(../images/list-arrow.png) no-repeat 95% center, -webkit-gradient(linear, left top, left bottom, from(#f6f8f9), to(#ededed));
   background: url(../images/list-arrow.png) no-repeat 95% center, -webkit-linear-gradient(top, #f6f8f9, #ededed);
   background: url(../images/list-arrow.png) no-repeat 95% center, linear-gradient(to bottom, #f6f8f9, #ededed);
