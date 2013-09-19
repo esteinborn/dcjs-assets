@@ -4,8 +4,10 @@
 
 var isIE;
 
-if(navigator.appVersion.indexOf("MSIE 7.")!=-1 || navigator.appVersion.indexOf("MSIE 6.")!=-1) {
-  isIE = 1; //NProgress isn't compatible with IE7
+if ( navigator.appVersion.indexOf("MSIE 7.") !=- 1
+  || navigator.appVersion.indexOf("MSIE 6.") !=- 1 ) {
+  //NProgress isn't compatible with IE7
+  isIE = 1;
 }
 
 Object.keys = Object.keys || (function () {
@@ -25,38 +27,38 @@ Object.keys = Object.keys || (function () {
   return function (o) {
     if (typeof o != "object" && typeof o != "function" || o === null)
       throw new TypeError("Object.keys called on a non-object");
- 
+
     var result = [];
     for (var name in o) {
       if (hasOwnProperty.call(o, name))
         result.push(name);
     }
- 
+
     if (hasDontEnumBug) {
       for (var i = 0; i < DontEnumsLength; i++) {
         if (hasOwnProperty.call(o, DontEnums[i]))
           result.push(DontEnums[i]);
-      }   
+      }
     }
- 
+
     return result;
   };
 })();
 
 function MissingCtrl($scope, $routeParams, $http, $sanitize) {
 
-  var baseUrl;    
+  var baseUrl;
 
   $scope.loadMissingCases = function(baseUrl) {
-  
+
     if ( $('.node-type-missing-person').length > 0 ) {
       $('body').addClass('hide-sub-nav');
     } else {
       $('body').removeClass('hide-sub-nav');
     }
-      
+
     if (!isIE) {NProgress.start();}
-   
+
     if ($routeParams.name) {
       baseUrl = baseUrl + "/" + $routeParams.name + '?callback=JSON_CALLBACK';
     } else {
@@ -71,11 +73,11 @@ function MissingCtrl($scope, $routeParams, $http, $sanitize) {
 
       return $scope;
     }).then(function($scope) {
-      
+
       // remove the loading message, since it's loaded now.
-      $(".loading").addClass("hidden"); 
-      
-      if ($scope.person 
+      $(".loading").addClass("hidden");
+
+      if ($scope.person
             && $scope.person.type !== "Missing Child Alert"
             && $scope.person.type !== "Missing College Student Alert"
             && $scope.person.type !== "Missing Vulnerable Adult Alert"
@@ -106,7 +108,7 @@ function MissingCtrl($scope, $routeParams, $http, $sanitize) {
 
     $scope.person = data.missingPerson[0];
 
-  };  
+  };
 }
 
 MissingCtrl.$inject = ['$scope', '$routeParams', '$http', '$sanitize'];

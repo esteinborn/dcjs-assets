@@ -287,7 +287,7 @@ var createAlertPanels = function( numAlert, alertLink ) {
   if ( numAlert > 1 ) {
     // Set all panel links to the overview page if there are multiple alerts active at one time
     alertLink = "http://missing.criminaljustice.ny.gov/alerts";
-  } else {
+  } if ( !isAmberAlert ) {
     // Will need to change this for the Angular App.
     alertLink = "http://missing.criminaljustice.ny.gov" + alertLink;
   }
@@ -318,12 +318,13 @@ var createAlertPanels = function( numAlert, alertLink ) {
 };
 
 var requestAlerts = $.ajax({
-  url : "http://nydcjsdev.devcloud.acquia-sites.com/alertlist",
-  // url : "http://missing.criminaljustice.ny.gov/alertcheck",
-  // url : "wrong",
+  // url : "http://nydcjsdev.devcloud.acquia-sites.com/alertlist",
+  url : "http://missing.criminaljustice.ny.gov/alertlist",
   dataType : "jsonp",
   jsonpCallback: "alertList",
-  contentType : "text/javascript"
+  contentType : "text/javascript",
+  // Set a timeout to fire if you get a 404. needed for JSONP 404 responses
+  timeout: 5000
 });
 
 requestAlerts.done(function( data ) {
@@ -331,7 +332,7 @@ requestAlerts.done(function( data ) {
   displayAlerts( data );
 });
 
-requestAlerts.fail(function() {
+requestAlerts.always(function() {
   // We still need to run the slideshow even if the ajax req fails.
   runSlideShow();
 });
@@ -365,7 +366,6 @@ var displayAlerts = function( data ) {
     }
     createAlertPanels( numAlert, linkAlert );
   }
-  runSlideShow();
 };
 
 var runSlideShow = function() {

@@ -17,7 +17,7 @@ body {
   font-size: 11px;
   margin: 0;
 }
- 
+
 img {
   border: none;
   -ms-interpolation-mode: bicubic;
@@ -1085,7 +1085,7 @@ select {
 .unoSlider ul {
   list-style:none;
   overflow:hidden;
-  position:relative;  
+  position:relative;
 }
 
 .unoSliderNav span{
@@ -2345,7 +2345,7 @@ body.toolbar {
   color: #222;
 
   @include breakpoint($print-media) {
-    color:#000;   
+    color:#000;
   }
 
   p {
@@ -2458,7 +2458,7 @@ body.toolbar {
 
 .people-container {
   max-width:100%;
- 
+
   .lt-ie8 & {
     width: 65%;
   }
@@ -2476,7 +2476,7 @@ body.toolbar {
 }
 
 .person-container {
-  min-height: 14em;
+  min-height: 14.5em;
   margin-bottom: 1em;
 
   .circumstances-container & {
@@ -2494,12 +2494,6 @@ body.toolbar {
   font-size: 2.5em;
   font-weight: 600;
   padding:0 0.25em 0.15em 0;
-
-  .lt-ie8 & {
-    float: left;
-    display: block;
-  }
-
 }
 
 .person-name {
@@ -2536,6 +2530,11 @@ body.toolbar {
   width: 50%;
   margin-left: 2%;
   line-height: 1.35em;
+  color: #222;
+
+  h2 {
+    color: #039;
+  }
 
   .field-label {
     width: 3.5em;
@@ -2562,7 +2561,7 @@ body.toolbar {
     }
 
     .lt-ie8 & {
-      height: 14em;
+      height: 14.5em;
     }
 
     .person-details {
@@ -2586,6 +2585,10 @@ body.toolbar {
     .lt-ie9 & {
       font-size: 1.2em;
     }
+    .lt-ie8 & {
+      float: left;
+      display: block;
+    }
   }
 
   img {
@@ -2599,7 +2602,7 @@ body.toolbar {
   width: 100%;
   clear: left;
   margin-top: -1em;
-  
+
   .case-details {
     line-height: 1.75em;
   }
@@ -2655,7 +2658,7 @@ body.toolbar {
   .case-type {
     color: $color-alert;
   }
-  
+
   .investigating-agency, .case-number {
     display: none;
   }
@@ -2762,7 +2765,7 @@ body.toolbar {
 
   .field-label,
   strong {
-    color:#222;  
+    color:#222;
   }
 }
 
@@ -2776,7 +2779,7 @@ body.toolbar {
   }
 }
 
-.meccBanner { 
+.meccBanner {
   font-size: 15px;
   font-weight: 600;
   color: #606E95;
@@ -2855,14 +2858,14 @@ body.toolbar {
   p {
     color: #222;
   }
-  
+
   .lt-ie8 & a,
   .oldie & a{
     padding: 1.5em 0;
     display: block;
     overflow: hidden;
   }
-  
+
   .person-image {
     float: left;
     width:230px;
@@ -2947,7 +2950,7 @@ body.toolbar {
 
 .contact-person, .contact-number, .contact-url {
   float: left;
-  width: 60%; 
+  width: 60%;
   text-align: center;
   font-weight:700;
 
