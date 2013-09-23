@@ -1,0 +1,578 @@
+@media screen and (max-width: 800px) {
+.mobileOnly {
+  display: inherit;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  font-size: 16px;
+}
+
+body.facebook {
+  font-size: 11px;
+}
+
+body, #wrapper, #page {
+  background-image: none;
+  background-color: #F9F9F9;
+  color: #444;
+}
+
+#wrapper, #page, #content, #main, #contentFloat, html, body, #mainContent {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  float: none;
+  min-width: 0;
+  overflow: visible;
+}
+
+.outer-wrapper-wo-active-nav {
+  position: absolute;
+  right: 0;
+
+  .inner-wrapper-wo-active-nav {
+    position: static;
+    right: auto;
+    top: auto;
+    width: 175px;
+
+    .inactive-nav {
+      display: none;
+      left: 100%;
+    }
+  }
+}
+
+.outer-wrapper-w-active-nav {
+  position: absolute;
+  right: 238px;
+
+  .inner-wrapper-w-active-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+
+    .active-nav {
+      display: block;
+      top: 0; // TODO: remove from leftnav
+      left: 100%;
+    }
+  }
+}
+
+.outer-wrapper-w-active-nav,
+.outer-wrapper-wo-active-nav,
+.inner-wrapper-w-active-nav,
+.inner-wrapper-wo-active-nav,
+.active-nav,
+.inactive-nav {
+  // @include translate3d(0,0,0);
+
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+#navigation, .leftnav {
+  float: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.facebook img, .soms img {
+  max-width: inherit;
+}
+
+#nygov-Banner, #nygov-SearchSwitcher, #header, #subnav, #localnav, #subnav p, #localnav p, #prev, #next {
+  display: none;
+}
+
+a {
+  padding: 6px 0;
+}
+
+h1, h2 {
+  font-size: 1.13em;
+  padding: .33em 0;
+}
+
+h3, h4, h5, h6 {
+  font-size: 1.06em;
+}
+
+td, th {
+  font-size: 1em;
+}
+
+#mobileHeader {
+  display: block;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  position: relative;
+  background: $color-mobile-header;
+}
+
+.facebook #mobileHeader {
+  display: none !important;
+}
+
+#dcjs_text_mobile {
+  display: block;
+  text-indent: 3px;
+  color: #444;
+  height: auto;
+  width: 80%;
+  background-image: none;
+}
+
+#governor_mobile,
+#commissioner_mobile {
+  display: none;
+}
+
+#dcjs_text_mobile {
+  font-size: 2em;
+  font-weight: 500;
+  margin: .2em 0 0 0;
+}
+
+#governor_mobile, #commissioner_mobile {
+  font-size: .63em;
+  line-height: 1.2em;
+}
+
+.gsc-search-box .gsst_a .gscb_a {
+  color: $color-mobile-button;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.clicked {
+    color: adjust-lightness($color-mobile-button, 15%);
+  }
+
+}
+
+#quickbarNav .button,
+.button,
+button .button,
+#gs_f {
+  font-size: 0.8em;
+  height: 2.5em;
+  line-height: 2.5em;
+  color: white;
+  white-space: nowrap;
+  text-align: center;
+  border: 0;
+  padding-left: 6px;
+  padding-right: 6px;
+  background: $color-mobile-button;
+  background-clip: padding-box;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+
+  @include border-radius($radius-mobile);
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.clicked {
+    background: adjust-lightness($color-mobile-button, 15%);
+  }
+
+}
+
+#search .gsc-search-box input.gsc-search-button:hover,
+#search .gsc-search-box input.gsc-search-button:active,
+#search .gsc-search-box input.gsc-search-button:focus {
+  background: adjust-lightness($color-mobile-button, 15%);
+}
+
+#mobileNav {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 9px;
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/interface/hamburger-no-dots.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  height: 2.5em;
+  width: 3em;
+
+  &.clicked {
+    background-image: url("../images/interface/menu-back.png");
+  }
+
+  .svg & {
+    background-image: url("../images/interface/hamburger-no-dots.svg");
+    background-size: 24px 24px;
+
+
+    &.clicked {
+      background-image: url("../images/interface/menu-back.svg");
+      background-size: 24px 24px;
+    }
+
+  }
+
+}
+
+.subNavButtonWrap {
+  padding: 5px 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.subNavButtonWrap a {
+  margin-right: .5em;
+}
+
+#quickbarNav {
+  padding: 7px 0 5px 0;
+  width: 100%;
+  float: none;
+  overflow: hidden;
+  height: auto;
+  display: none;
+}
+
+#quickbarNav a {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 0 0 3px;
+  width: 140px;
+}
+
+#quickbar, #sb .si {
+  padding: 0;
+  border: 0;
+  height: 2.63em;
+  background: $color-mobile-header;
+}
+
+#search {
+  width: 98%;
+  padding: 0 1%;
+  float: none;
+  height: auto;
+  margin: 0 auto;
+}
+
+#search form, #sb .si {
+  width: 100%;
+  margin: 0;
+  padding: .31em 0;
+  height: auto;
+}
+
+#search fieldset {
+  height: auto;
+}
+
+#search input, #q_f {
+  font-size: 0.8em;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: #444;
+  z-index: 9;
+  text-indent: 10px;
+  -webkit-background-clip: padding-box;
+
+  @include border-radius($radius-mobile);
+}
+
+#search button, #gs_f {
+  font-weight: 700;
+  color: #FFF;
+  width: 2.5em;
+  text-indent: 0;
+  margin: 1px 0 0;
+  z-index: 10;
+  background-image: none;
+
+  @include border-radius($radius-mobile);
+}
+
+.leftnav {
+  display: none;
+  position: absolute;
+  font-size: inherit;
+  width: 238px;
+
+  a {
+    font-size: .81em;
+    background: $color-mobile-button;
+    padding: 0.25em 0 0.25em 1em;
+    height: 30px;
+    width: 225px;
+    line-height: 30px;
+
+    &:hover {
+      background: adjust-lightness($color-mobile-button, 15%);
+    }
+
+    .lastnav {
+      height: 31px;
+    }
+  }
+}
+
+.leftnav ul a {
+  padding-left: 0.25em 0.5em;
+  background: #E4E8F3 none;
+
+  &:hover {
+    background: #FEFAE7;
+  }
+}
+
+#subnav, #localnav {
+  position: absolute;
+  top: 11.38em;
+  width: 70%;
+  margin: 0 0 0 15%;
+  -moz-box-shadow: 0 0 2px #333;
+  -webkit-box-shadow: 0 0 2px #333;
+  box-shadow: 0 0 2px #333;
+  border: 0;
+  z-index: 999;
+}
+
+#subnav a, #localnav a {
+  background: none repeat scroll 0 0 #E4E8F3;
+  font-size: .81em;
+  color: #000;
+  padding: 6px 0;
+  text-indent: 5px;
+}
+
+#subnav a:hover, #localnav a:hover {
+  background: none repeat scroll 0 0 #FEFAE7;
+  text-decoration: none;
+}
+
+#footer {
+  text-align: left;
+  border: none;
+  padding: 1em 0;
+  margin:2em 0 0 0;
+  background-color: #494949;
+}
+
+#footer a {
+  xtext-shadow: 0 1px 0 #333;
+  xfont-weight: bold;
+  xtext-indent: 10px;
+  display: block;
+  padding: 0.5em 0;
+}
+
+#govsForcedContainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#govbox {
+  float: none;
+  margin-top: 10px;
+  width: 240px;
+  height: 375px;
+}
+
+.featureWrapper {
+  width: 315px;
+  height: 197px;
+  -moz-box-shadow: 0 0 2px #333;
+  -webkit-box-shadow: 0 0 2px #333;
+  box-shadow: 0 0 2px #333;
+  margin-bottom: 10px;
+  z-index: 100;
+}
+
+.featureSlider, .featureSlider .panel, .featureImg {
+  width: 315px;
+  height: 197px;
+}
+
+.featureSlider .panel {
+  background-image: none;
+  padding: 0;
+}
+
+.panel-wrapper {
+  width: 315px;
+  height: 197px;
+}
+
+.panel-wrapper img {
+  max-width: 100%;
+  height: auto !important;
+}
+
+.panel-info-bg {
+  background: #000 none;
+  opacity: 0.6;
+  width: 315px;
+}
+
+.panel-info {
+  width: 96%;
+  padding: 0 2%;
+}
+
+.panel-info h2 {
+  font-size: 11px;
+}
+
+.panel-info p {
+  line-height: 10px;
+  font-size: 10px;
+}
+
+.features h1 {
+  background: #E8EAF7;
+}
+
+.features li {
+  line-height: 1.2em;
+  border: 0;
+}
+
+.features a {
+  display: block;
+}
+
+.onToggled {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom: 0;
+}
+
+.mobileTogglee {
+  display: none;
+  border: 1px solid adjust-lightness($color-mobile-button, 15%);
+  position: relative;
+  top: -4px;
+  border-top: 0;
+  padding: 6px;
+
+    @include border-bottom-left-radius($radius-mobile);
+    @include border-bottom-right-radius($radius-mobile);
+}
+
+.mobileTogglee ul {
+  margin: 0;
+}
+
+#contentleft, #contentright {
+  width: 100%;
+  float: none;
+}
+
+#offenderSearch {
+  max-width: 320px;
+}
+
+legend {
+  font-size: .94em;
+}
+
+label {
+  font-size: .75em;
+}
+
+.border {
+  font-size: 1em;
+  line-height: 1.5em;
+  height: 1.5em;
+  width: 98%;
+}
+
+.importantbox {
+  width: 96% !important;
+  padding: 1% !important;
+}
+
+#googleMapFrame {
+  width: 90%;
+}
+
+#sorstats {
+  width: 100%;
+}
+
+table {
+  margin-left: 0 !important;
+}
+
+/* Drupal App Styles */
+.missing-person-ul {
+  margin: 0 auto;
+  min-width: 0;
+  max-width: 100%;
+  width: inherit;
+}
+
+#missingList li, #alphaChildList li {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 100%;
+}
+
+#missingList span, #alphaChildList span, #missingList .childImg, #alphaChildList .childImg {
+  width: 100%;
+  padding: .13em 0;
+}
+
+#missingList a, #alphaChildList a, #missingList a:visited, #alphaChildList a:visited {
+  height: auto !important;
+  overflow: hidden;
+}
+
+.missingInfoTable {
+  width: 100%;
+}
+
+.missingInfoTable img {
+  max-width: 300px;
+}
+
+.missingPerson, .infoBlock, .picBlock, .missingPerson .logo, .missingPerson .contactInfo {
+  float: none;
+  width: inherit;
+  max-width: 100%;
+}
+
+#map-view-container {
+  overflow: visible;
+}
+
+.ui-panel-content-text, .ui-tabs .ui-tabs-panel {
+  padding: 0.5em 0.2em !important;
+}
+
+.ui-tabs .ui-tabs-nav {
+  overflow: hidden;
+}
+}

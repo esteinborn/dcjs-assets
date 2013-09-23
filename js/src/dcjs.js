@@ -11,36 +11,36 @@
 	// Detects if the current browser is a BlackBerry of some sort.
 	function DetectBlackBerry() {
 		if (uagent.search(deviceBB) > -1) {
-			return true; 
+			return true;
 		} else {
 			return false;
 		}
 	}
 
 	if (searchSwitcher.css("display") === "none") { // Lets check to see if we're on a mobile device by checking to see if the search switcher is hidden (a media query CSS style)
-			
-		isMobile = true;	
+
+		isMobile = true;
 	}
 
 
 	if (dcjs.isSOMS > 0) {
-		
+
 		/* SOR SEARCH DOWNTIME MESSAGE */
 		//$("#offenderSearch").prepend("<h3><em><b>PLEASE NOTE:</b> The Sex Offender Registry Subdirectory on the DCJS website will be unavailable from <b>7 a.m. to 8 a.m. on Thursday, Sept. 19</b>. During this time, you may call 1-800-262-3257 to learn whether an individual is a registered sex offender in New York State.</em></h3>");
-		
 
-		if (dcjs.isFacebook < 0) { 
+
+		if (dcjs.isFacebook < 0) {
 			/* SOMS fixes: for client-side template changes needed for the times in-between deployments only for NON facebook */
-			
+
 			$("table").find('p a[href^="../nsor/recipient.htm"]').find("img").addClass("viewMap");
 			// Fixes the view on map button for mobile/desktop users
-			
+
 			$("#quickbar").find(".flagLink").remove().end().find(".qbFacebook").parent().remove();
 			// Removes translate and find us on facebook buttons from the quickbar
 
 			$(".leftnav").find("li:first").find("a:last").text("Re-entry Initiatives");
 			// Rename to "Re-entry initiatives"
-		}	
+		}
 
 		var dialogW = 600,
 			dialogH = 500;
@@ -74,7 +74,7 @@
 			if (hasPhotosRun < 1) {
 
 				var url = this.href;
-				
+
 				// load remote content
 				dialog.load(
 					url,
@@ -88,22 +88,23 @@
 				hasPhotosRun = 1;
 			}
 			else {
-				
+
 				dialog.dialog("open");
 			}
 
 			//prevent the browser to follow the link
 			e.preventDefault();
 		});
-		
-	}	
+
+	}
 
 	if (dcjs.isFacebook < 0 ) { // If we're NOT in facebook.
-		
-		if (isMobile) { // Never want isMobile to run if you're on Facebook. so we put it inside the "IS NOT FACEBOOK" check.
-			
+		// Never want isMobile to run if you're on Facebook.
+		if (isMobile) {
+
 			var nav = $("#navigation"),
-				quickbarHTML = "<li><a href='/SomsSUBDirectory/search_index.jsp' class='button'>Sex Offender Search</a></li><li><a href='/missing/index.htm' class='button'>Missing Persons</a></li>",
+				wrapper = $("#wrapper"),
+				quickbarHTML = "<li><a href='http://www.criminaljustice.ny.gov/SomsSUBDirectory/search_index.jsp' class='button'>Sex Offender Search</a></li><li><a href='http://www.criminaljustice.ny.gov/missing/index.htm' class='button'>Missing Persons</a></li>",
 				mobileHeader = $("#mobileHeader"),
 				mobileNav = $("#mobileNav"),
 				leftNav = $("ul.leftnav"),
@@ -114,50 +115,66 @@
 				mobileTogglee = $(".mobileTogglee"),
 				deviceBB = "blackberry";
 
-				uagent = navigator.userAgent.toLowerCase(); // Init our user agent string to lower case.
-				
+			// Init our user agent string to lower case.
+			uagent = navigator.userAgent.toLowerCase();
+
 			isBB = DetectBlackBerry();
-			
+
 			if (isBB) {
-			
+
 				$(".nonBB").css("display", "none");
-				
+
 			}
-	
+
+			// check to make sure we're on a page with navigation on it
 			if (nav.length) {
-	
+
 				quickbarNav.addClass("inline-block").html(quickbarHTML).appendTo(mobileHeader);
-				
+
 				nav.insertAfter(mobileNav);
-	
+
+				wrapper.toggleClass("outer-wrapper-wo-active-nav");
+				nav.toggleClass("inner-wrapper-w-active-nav");
+				leftNav.toggleClass("active-nav");
+
 				mobileNav.click(function(e){
 					e.preventDefault();
 					localNav.hide();
 					subNav.hide();
-	
+
 					if (!isBB) {
-						leftNav.fadeToggle();			
-					} else {					
-						leftNav.toggle();					
+						wrapper.toggleClass("outer-wrapper-wo-active-nav outer-wrapper-w-active-nav");
+					} else {
+						leftNav.toggle();
 					}
 				});
-				
+
+				$("#main, #footer").bind("touchstart click", function(){
+					if ( mobileNav.hasClass("clicked") ) {
+						console.log("has class");
+						mobileNav.toggleClass("clicked");
+						wrapper.toggleClass("outer-wrapper-wo-active-nav outer-wrapper-w-active-nav");
+						return false;
+					}
+
+				});
+
 			} else {
-	
+
 				mobileNav.remove();
-				
+
 				mobileHeader.css("height", "4.06em");
-				
+
 			} // End Navigation Changes
-	
-			$("head").append("<link rel='apple-touch-icon' href='http://www.criminaljustice.ny.gov/apple-touch-icon.png'>"); 
-			
+
+			$("head").append("<link rel='apple-touch-icon' href='http://www.criminaljustice.ny.gov/apple-touch-icon.png'>");
+
 			$(".button").live("click", function(){$(this).toggleClass("clicked");});
-			
+
 			if (subNav.length) {
-				
+
 				var subNavTitle = subNav.find("p").text();
-				
+
 				$("<a />", {
 					"class": "button",
 					"href": "#",
@@ -167,23 +184,23 @@
 						e.preventDefault();
 						localNav.hide();
 						leftNav.hide();
-							
+
 						if (!isBB) {
-							
+
 							subNav.fadeToggle();
-						
+
 						} else {
-							
+
 							subNav.toggle();
-							
+
 						}
 					}
 				}).insertBefore(subNav).wrap("<p class='subNavButtonWrap' />");
-				
+
 				if (localNav.length) {
-					
+
 					var localNavTitle = localNav.find("p").text();
-					
+
 					$("<a />", {
 						"class": "button",
 						"href": "#",
@@ -193,58 +210,58 @@
 							e.preventDefault();
 							subNav.hide();
 							leftNav.hide();
-							
+
 							if (!isBB) {
-								
+
 								localNav.fadeToggle();
-								
+
 							} else {
-								
+
 								localNav.toggle();
-								
+
 							}
 						}
 					}).insertAfter("#subNavButton");
 				} // end if localNav
 			} // End if subNav
-	
+
 			if (mobileToggler.length && !isBB) { // Moblie Toggler Setup
-					
+
 				mobileToggler.each(function(){ // Append the H5 text from each of the What's new headings to their child containers
-				
+
 					var $this = $(this),
 						h5 = "<p><strong>" + $this.text() + "</strong></p>";
-					
+
 					$this.next(mobileTogglee).prepend(h5);
-				
+
 				});
-				
+
 				mobileToggler.click(function(){
 					var $this = $(this);
 					$this.toggleClass("onToggled").next(mobileTogglee).slideToggle();
 				});
-	
+
 			} else { // Make BB's not have the toggle functionality cause BB's suck at the internet.
-			
+
 				mobileTogglee.css("display", "inherit");
-				
+
 			} // END MobileToggler
-	
+
 			// Begin Search optimizations
 			if (googleSearchButton.length) {
-	
+
 				googleSearchButton.val("Go").addClass("button");
-				
+
 			}
-		//End if isMobile = true	
+		//End if isMobile = true
 		} else {
-	
+
 			searchSwitcher.click(function(e){
 
 				e.preventDefault();
 				$(this).addClass("invisible");
 				$("#nygov-sw_searchbox").removeClass("invisible").addClass("isVisible");
-				
+
 			});
 		} // End if isMobile = false
 	}//End if isFacebook = true
@@ -274,9 +291,9 @@ $.fn.gaEventTracker = function(options) {
 			};
 
 		if ($this.data("ga")) {
-			
+
 			var ga = $this.data("ga");
-			
+
 			defaults = {
 				evtCategory: ga.evtCategory || "Category Not Defined",
 				evtAction: ga.evtAction || "",
@@ -296,7 +313,7 @@ $("#mainContent a[href$='.pdf'], #mainContent a[href$='.doc'], #mainContent a[hr
 
 /*****************************
 ** gaDocumentTrack Overview
-** 
+**
 ** Checks to make sure there isn't a gaEventTracker Init'd yet, and then checks HREF value of the link
 ** and compares it to the window.location.pathname and inserts appropriate directory names into the google event tracker.
 ** Full support for External Documents categorized as: "External Document"
@@ -305,26 +322,26 @@ $("#mainContent a[href$='.pdf'], #mainContent a[href$='.doc'], #mainContent a[hr
 *******************************/
 
 function gaDocumentTrack() {
-	
+
 	var $this = $(this);
 
 	if (!$this.data("ga")) {  // Only run if no data-ga has been declared previously, you dont want to overwrite the specific stuff.
-		
+
 		var	category = "Documents",
 			action = "",
 			label = $this.attr("href"),
 			i = 0, z = 0, numSlashes = 0,
 			oURL = window.location.pathname,
 			splitURL = oURL.split("/");
-	
+
 			splitURL.remove(0); // removes first blank entry in the Array
 			splitURL.remove(-1); // removes filename
-	
+
 		if (label.match(/(\.\.\/)/gi)) { // check for "../" in HREF attr
-	
+
 			numSlashes = label.match(/(\.\.\/)/gi).length; // how many slashes
 			label = label.replace(/(\.\.\/)/gi, ""); // replace slashes with ""
-	
+
 			if (numSlashes === splitURL.length) { // if the number of slashes equals directories in splitURL
 
 				action = "/" + label;
@@ -332,30 +349,30 @@ function gaDocumentTrack() {
 			} else {  // If numSlashes !=== splitURL.length (meat and potatoes)
 
 				for (i; i < numSlashes; i++) {
-	
+
 					splitURL.remove(-1); // removes the last item in the array until numslashes are removed
-					
+
 				}
-	
+
 				for (z; z < splitURL.length; z++) {
-	
+
 					if (action === "") { // runs once at beginning
-	
+
 						splitURL.reverse(); // reverse the split to reassemble URL
-	
+
 						action = "/" + splitURL[z] + "/" + label; // /splitURL[0]/label
-	
+
 					} else { // runs until numSlashes has been fulfilled
-	
+
 						action = "/" + splitURL[z] + action; // /splitURL[z]/splitURL[0]/label
 					}
-	
+
 				}
-	
+
 			}
-	
+
 		} else { // run if there are NO ../'s
-		
+
 			if (label.match("http://") && !oURL.match("/search")) { // External && not search!
 
 				category = "External Documents";
@@ -378,7 +395,7 @@ function gaDocumentTrack() {
 		}
 
 		oURL = oURL.replace("/index.htm", "/").replace("/index.html", "/"); // index URL's = "/"
-	
+
 		$this.gaEventTracker({
 			"evtCategory": category,
 			"evtAction": action,
@@ -394,11 +411,11 @@ function gaDocumentTrack() {
 	if (isState > 0){
 		newDomainLink = dcjs.theURL.replace("state.ny.us", "ny.gov");
 		if (isWWW < 0 ) {
-			newDomainLink = newDomainLink.replace("http://", "http://www.");		
+			newDomainLink = newDomainLink.replace("http://", "http://www.");
 		}
 		$("body").prepend('<div class="newDomainReminder"><div class="centerer"><p>Our website has moved.<br />Access our new site by clicking the link below and remember to update your bookmarks.</p><p><a href="' + newDomainLink + '">' + newDomainLink + '</a><span class="domainCloser"><a href="#">X</a></span></p></div></div>');
 		setTimeout(function(){$(".newDomainReminder").animate({"top": 0});}, 1500);
-		
+
 		$(".domainCloser a").live("click", function(e){e.preventDefault(); $(".newDomainReminder").animate({"top": "-160px"});});
 	}
 

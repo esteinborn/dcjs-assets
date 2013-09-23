@@ -1,0 +1,67 @@
+@media print {
+  @page {
+    margin: 0.25in;
+  }
+
+  body {
+    color:#000;
+  }
+
+  .node-missing-person {
+    font-size: 13px;
+  }
+
+  #dcjs_logo, #dcjs_text, #governor, #commissioner, #navigation, #subnav, #localnav, #quickbar, #footer, .skipLinks, .featureWrapper, #nysgov, .noprint, .ui-tabs-nav, #nygov-Banner, #sb-container, #header, .meccBanner, #secondary-menu, .element-invisible, .region-header, #magic-development, .messages {
+    display: none;
+  }
+
+  html body.admin-menu {
+    margin-top: 0 !important;
+  }
+
+  .ui-panel-content {
+    display: block !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 5px 0 3px;
+    font-weight: 700;
+  }
+
+  body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+
+  body, #wrapper, #page, #main, #content, #contentFloat, #mainContent, .missingPerson {
+    width: 100%;
+    float: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  img {
+    border: 0;
+  }
+
+  .headArea h2 {
+    text-shadow: none;
+  }
+
+  .missingFooter {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .case-type, .abd-circumstances {
+    text-shadow: none;
+    background: #FFF;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+}
