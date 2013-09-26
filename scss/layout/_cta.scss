@@ -1,0 +1,169 @@
+.cta-red {
+  @include cta($color-red, 8%, 16%);
+}
+
+.cta-green {
+  @include cta($color-green, 5%, 10%);
+}
+
+.cta-blue {
+  @include cta($color-blue, 7%, 14%);
+}
+
+.cta-yellow {
+  @include cta($color-yellow, 15%, 30%);
+  color: contrast-color($color-yellow, #444, #FFF, 50%);
+}
+
+.cta-icon {
+  display: block;
+  height: 50px;
+  background: transparent url(../images/interface/ctasprite.png) no-repeat;
+}
+
+.cta-icon-block {
+  background: transparent url(../images/interface/ctasprite.png) no-repeat;
+  height: 32px;
+  width: 32px;
+  margin: -7px 4px 0;
+  display: block;
+}
+
+.cta-icon-inline {
+  background: transparent url(../images/interface/ctasprite.png) no-repeat;
+  height: 32px;
+  width: 32px;
+  margin: 0 4px -10px 0;
+  display: inline-block;
+}
+
+.oldie .cta-icon-block {
+  margin-top: -28px;
+}
+
+.icon-download-inline {
+  background-position: 0 -150px;
+}
+
+.icon-more-inline {
+  background-position: 0 2px;
+}
+
+.icon-download, .icon-check {
+  margin-left: -5px;
+  padding-left: 37px;
+}
+
+.icon-go, .icon-more, .icon-pdf, .icon-search, .icon-email {
+  margin-right: -5px;
+  padding-right: 40px;
+}
+
+.icon-download {
+  background-position: 0 -141px;
+}
+
+.icon-check {
+  background-position: 0 -66px;
+}
+
+.icon-more {
+  background-position: right 10px;
+}
+
+.icon-go {
+  background-position: right -212px;
+}
+
+.icon-pdf {
+  background-position: right -291px;
+}
+
+.icon-search {
+  background-position: right -371px;
+}
+
+.icon-email {
+  background-position: right -451px;
+}
+
+.cta-small {
+  font-size: 16px;
+  height: 36px;
+  line-height: 36px;
+}
+
+.cta-small .cta-icon {
+  height: 36px;
+  background-position: right -298px;
+}
+
+.cta-big {
+  font-size: 22px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.cta-big .icon-download {
+  background-position: 0 -136px;
+  height: 60px;
+}
+
+.cta-big .icon-check {
+  background-position: 0 -61px;
+  height: 60px;
+}
+
+.cta-big .icon-more {
+  background-position: right 15px;
+  height: 60px;
+}
+
+.cta-big .icon-go {
+  background-position: right -207px;
+  height: 60px;
+}
+
+.cta-huge {
+  font-size: 26px;
+  height: 76px;
+  line-height: 76px;
+  padding: 0 26px;
+}
+
+.cta-huge .icon-download {
+  background-position: 0 -128px;
+  height: 76px;
+}
+
+.cta-huge .icon-check {
+  background-position: 0 -53px;
+  height: 76px;
+}
+
+.cta-huge .icon-more {
+  background-position: right 23px;
+  height: 76px;
+}
+
+.cta-huge .icon-go {
+  background-position: right -199px;
+  height: 76px;
+}
+
+.cta-subhead {
+  padding: 20px 30px;
+  font-size: 26px;
+  line-height: 26px;
+}
+
+.cta-subhead i {
+  color: #000;
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 0;
+  font-weight: normal;
+  font-style: normal;
+  display: block;
+  line-height: 26px;
+  font-size: 14px;
+}

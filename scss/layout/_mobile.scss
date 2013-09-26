@@ -166,6 +166,7 @@ td, th {
 
 #quickbarNav .button,
 .button,
+a.button,
 button .button,
 #gs_f {
   font-size: 0.8em;
@@ -227,8 +228,7 @@ button .button,
 
 
     &.clicked {
-      background-image: url("../images/interface/menu-back.svg");
-      background-size: 24px 24px;
+      background-image: url("../images/interface/menu-back.svg") !important;
     }
 
   }
@@ -347,12 +347,9 @@ button .button,
 
 #subnav, #localnav {
   position: absolute;
-  top: 11.38em;
+  top: 10.3em;
   width: 70%;
   margin: 0 0 0 15%;
-  -moz-box-shadow: 0 0 2px #333;
-  -webkit-box-shadow: 0 0 2px #333;
-  box-shadow: 0 0 2px #333;
   border: 0;
   z-index: 999;
 }

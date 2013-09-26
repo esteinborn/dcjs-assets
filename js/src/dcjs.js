@@ -103,14 +103,13 @@
 		if (isMobile) {
 
 			var nav = $("#navigation"),
-				wrapper = $("#wrapper"),
+				wrapper = $("#wrapper, #page"),
 				quickbarHTML = "<li><a href='http://www.criminaljustice.ny.gov/SomsSUBDirectory/search_index.jsp' class='button'>Sex Offender Search</a></li><li><a href='http://www.criminaljustice.ny.gov/missing/index.htm' class='button'>Missing Persons</a></li>",
 				mobileHeader = $("#mobileHeader"),
 				mobileNav = $("#mobileNav"),
 				leftNav = $("ul.leftnav"),
 				subNav = $("#subnav"),
 				localNav = $("#localnav"),
-				googleSearchButton = $("#gs_f"),
 				mobileToggler = $(".mobileToggler"),
 				mobileTogglee = $(".mobileTogglee"),
 				deviceBB = "blackberry";
@@ -137,21 +136,15 @@
 				nav.toggleClass("inner-wrapper-w-active-nav");
 				leftNav.toggleClass("active-nav");
 
-				mobileNav.click(function(e){
+				mobileNav.bind("click", function(e){
 					e.preventDefault();
 					localNav.hide();
 					subNav.hide();
-
-					if (!isBB) {
-						wrapper.toggleClass("outer-wrapper-wo-active-nav outer-wrapper-w-active-nav");
-					} else {
-						leftNav.toggle();
-					}
+					wrapper.toggleClass("outer-wrapper-wo-active-nav outer-wrapper-w-active-nav");
 				});
 
-				$("#main, #footer").bind("touchstart click", function(){
+				$("#main, #footer").bind("touchstart", function(){
 					if ( mobileNav.hasClass("clicked") ) {
-						console.log("has class");
 						mobileNav.toggleClass("clicked");
 						wrapper.toggleClass("outer-wrapper-wo-active-nav outer-wrapper-w-active-nav");
 						return false;
@@ -161,9 +154,9 @@
 
 			} else {
 
-				mobileNav.remove();
+				mobileNav.addClass("hidden");
 
-				mobileHeader.css("height", "4.06em");
+				mobileHeader.css("height", "3em");
 
 			} // End Navigation Changes
 
@@ -183,7 +176,6 @@
 					click: function(e) {
 						e.preventDefault();
 						localNav.hide();
-						leftNav.hide();
 
 						if (!isBB) {
 
@@ -209,7 +201,6 @@
 						click: function(e) {
 							e.preventDefault();
 							subNav.hide();
-							leftNav.hide();
 
 							if (!isBB) {
 
@@ -242,17 +233,9 @@
 				});
 
 			} else { // Make BB's not have the toggle functionality cause BB's suck at the internet.
-
 				mobileTogglee.css("display", "inherit");
 
 			} // END MobileToggler
-
-			// Begin Search optimizations
-			if (googleSearchButton.length) {
-
-				googleSearchButton.val("Go").addClass("button");
-
-			}
 		//End if isMobile = true
 		} else {
 
