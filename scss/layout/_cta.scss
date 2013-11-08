@@ -36,7 +36,12 @@
   margin: 0 4px -10px 0;
   display: inline-block;
 }
-
+.cta-soms {
+  @include breakpoint($size-mobile-smallest) {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
 .oldie .cta-icon-block {
   margin-top: -28px;
 }

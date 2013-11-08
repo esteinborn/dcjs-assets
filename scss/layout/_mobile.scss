@@ -210,13 +210,13 @@ button .button,
   top: 10px;
   right: 9px;
   margin: 0;
-  padding: 0;
+  padding: 0 0.5em 0 0;
   background-image: url("../images/interface/hamburger-no-dots.png");
-  background-position: center center;
+  background-position: 1px center;
   background-repeat: no-repeat;
-  text-indent: -9999px;
+  text-align: right;
   height: 2.5em;
-  width: 3em;
+  width: 4.7em;
 
   &.clicked {
     background-image: url("../images/interface/menu-back.png");

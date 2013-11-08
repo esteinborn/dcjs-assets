@@ -26,7 +26,8 @@
 	if (dcjs.isSOMS > 0) {
 
 		/* SOR SEARCH DOWNTIME MESSAGE */
-		//$("#offenderSearch").prepend("<h3><em><b>PLEASE NOTE:</b> The Sex Offender Registry Subdirectory on the DCJS website will be unavailable from <b>7 a.m. to 8 a.m. on Thursday, Sept. 19</b>. During this time, you may call 1-800-262-3257 to learn whether an individual is a registered sex offender in New York State.</em></h3>");
+
+		// $("#offenderSearch").prepend('<div class="ui-widget withSideNav noprint">								<div class="ui-state-highlight ui-corner-all">									<p><span class="ui-icon ui-icon-info ui-icon-float"></span> <strong>The New York State Division of Criminal Justice Services\' (DCJS) website will be undergoing a system upgrade from 6 a.m. to 8 a.m. on Thursday, Oct. 24.</strong><br>										This may result in some issues with connectivity, and it is possible that the Sex Offender Registry search function on the DCJS website may not be available during this time. We appreciate your patience during this process.</p>								</div>							</div>');
 
 
 		if (dcjs.isFacebook < 0) {
@@ -48,6 +49,7 @@
 		if (isMobile) {
 
 			dialogW = "90%";
+			dialogH = "320";
 
 		}
 

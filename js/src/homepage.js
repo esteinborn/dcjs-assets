@@ -270,7 +270,7 @@ function afterCount() {
 function is_empty( obj ) {
 
   // null and undefined are empty
-  if ( obj == null ) {return true;}
+  if ( obj === null ) {return true;}
   // Assume if it has a length property with a non-zero value
   // that that property is correct.
   if ( obj.length && obj.length > 0 ) {return false;}
