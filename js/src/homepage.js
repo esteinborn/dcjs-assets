@@ -340,8 +340,7 @@ requestAlerts.always(function() {
 var displayAlerts = function( data ) {
   var i = 0,
       cases = data.missingPerson;
-
-  if ( !is_empty( cases[0] ) ) {
+  if ( !is_empty( cases ) ) {
     for( i in cases ) {
       if ( cases.hasOwnProperty( i ) ) {
         numAlert++;

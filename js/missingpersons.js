@@ -7,7 +7,7 @@ myApp.controller('MissingPersonsCtrl', ['$scope', function($scope) { // initiali
   //loadMissingCases function will grab a JSONP file and populate MissingPersons for use in the template file
   $scope.loadMissingCases = function(theUrl) {
 
-      // Load the missing feed URL    
+      // Load the missing feed URL
     $.ajax({
       url : theUrl, // theUrl is passed in from the function initializer
       dataType : 'jsonp', // Must be JSONP for Drupal, may need to change for Portal
@@ -25,7 +25,7 @@ myApp.controller('MissingPersonsCtrl', ['$scope', function($scope) { // initiali
           filterSelector: ".last-name",
           includeNums: false
         });
-        
+
       }
     });
   };
@@ -33,7 +33,7 @@ myApp.controller('MissingPersonsCtrl', ['$scope', function($scope) { // initiali
 }] );
 
 myApp.directive("feedurl", function() { // Directive interacts with the DOM, this one runs off of the attribute "feedurl" on any dom elements
-  return { 
+  return {
     restrict: "A", // only apply to attributes, not classes, elements, or comments
     link: function(scope, element, attrs) {
       scope.loadMissingCases(attrs.feedurl); // initialize loadMissingCases() and send it the "feedurl" attribute value, in this case it's a URL for missing cases

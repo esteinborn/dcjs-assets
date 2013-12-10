@@ -7,14 +7,26 @@ $size-small:   12px;
 $size-half:    8px;
 $size-tiny:    4px;
 
+
+// Breakpoint Sizes
+// -------------------------
+
+$bp-big: 55em;
+$bp-print: 48em;
+$bp-small:  46em;
+$bp-small-2:  42em;
+$bp-smaller: 38em;
+$bp-smallest: 30em;
+
 // Key Breakpints
 // -------------------------
 $print-media: 'print';
-$size-mobile: max-width 50em; // 800px
-$size-mobile-small: max-width 46em; // 736px
-$size-mobile-smaller: max-width 38em; // 608 px
-$size-mobile-smallest: max-width 30em; // 480 px
-$size-print: max-width 48em; // 768px
+$size-mobile: max-width $bp-big, max-device-width 1023px; // 880ish px
+$size-mobile-small: max-width $bp-small; // 736px
+$size-mobile-small-2: max-width $bp-small-2; // 736px
+$size-mobile-smaller: max-width $bp-smaller; // 608 px
+$size-mobile-smallest: max-width $bp-smallest; // 480 px
+$size-print: max-width $bp-print; // 768px
 
 // Colors
 // -------------------------

@@ -270,7 +270,7 @@ function afterCount() {
 function is_empty( obj ) {
 
   // null and undefined are empty
-  if ( obj == null ) {return true;}
+  if ( obj === null ) {return true;}
   // Assume if it has a length property with a non-zero value
   // that that property is correct.
   if ( obj.length && obj.length > 0 ) {return false;}
@@ -340,8 +340,7 @@ requestAlerts.always(function() {
 var displayAlerts = function( data ) {
   var i = 0,
       cases = data.missingPerson;
-
-  if ( !is_empty( cases[0] ) ) {
+  if ( !is_empty( cases ) ) {
     for( i in cases ) {
       if ( cases.hasOwnProperty( i ) ) {
         numAlert++;

@@ -1,4 +1,4 @@
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $bp-big), (max-device-width: 1023px) {
 .mobileOnly {
   display: inherit;
 }
@@ -7,7 +7,7 @@ html {
   -webkit-text-size-adjust: none;
 }
 
-body {
+#wrapper, #page {
   font-size: 16px;
 }
 
@@ -381,11 +381,6 @@ button .button,
   xtext-indent: 10px;
   display: block;
   padding: 0.5em 0;
-}
-
-#govsForcedContainer {
-  width: 100%;
-  margin: 0 auto;
 }
 
 #govbox {

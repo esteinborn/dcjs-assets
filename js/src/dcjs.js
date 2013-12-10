@@ -17,30 +17,50 @@
 		}
 	}
 
-	if (searchSwitcher.css("display") === "none") { // Lets check to see if we're on a mobile device by checking to see if the search switcher is hidden (a media query CSS style)
-
-		isMobile = true;
+	// We need to check to see if A: We're on a mobile device resolution (around 800ish px)
+	// Then lets make sure we're not also on a landscaped ipad. max-device resolution only hits on mobile devices, in this specific instance all I care about is the iPad and other 1024 tablets. this is a hack, we shouldnt need to do as much with JS as we do, but whaevs. be warned, I tried to mess with this recently, and thar be dragons.
+	if (window.matchMedia){
+		if (window.matchMedia("(max-width: 55em), (max-device-width:1023px)").matches) {
+			isMobile = true;
+		}
 	}
-
-
 	if (dcjs.isSOMS > 0) {
 
 		/* SOR SEARCH DOWNTIME MESSAGE */
 
 		// $("#offenderSearch").prepend('<div class="ui-widget withSideNav noprint">								<div class="ui-state-highlight ui-corner-all">									<p><span class="ui-icon ui-icon-info ui-icon-float"></span> <strong>The New York State Division of Criminal Justice Services\' (DCJS) website will be undergoing a system upgrade from 6 a.m. to 8 a.m. on Thursday, Oct. 24.</strong><br>										This may result in some issues with connectivity, and it is possible that the Sex Offender Registry search function on the DCJS website may not be available during this time. We appreciate your patience during this process.</p>								</div>							</div>');
 
-
+		// SOMS fixes for client-side template changes in-between deployments
+		// only for NON facebook
 		if (dcjs.isFacebook < 0) {
-			/* SOMS fixes: for client-side template changes needed for the times in-between deployments only for NON facebook */
 
-			$("table").find('p a[href^="../nsor/recipient.htm"]').find("img").addClass("viewMap");
+			// Meta Viewport on SOMS was zooming in when flipping device orientation. This makes it like the rest of the site.
+			var vpMeta = document.getElementsByTagName('meta'),
+					metacount;
+			for (metacount=0; metacount<vpMeta.length; metacount++) {
+				if (vpMeta[metacount].name === "viewport") {
+					vpMeta[metacount].content = "width=device-width, initial-scale=1, minimum-scale=1";
+				}
+			}
+
 			// Fixes the view on map button for mobile/desktop users
+			$("table").find('p a[href^="../nsor/recipient.htm"]')
+								.find("img")
+								.addClass("viewMap");
 
-			$("#quickbar").find(".flagLink").remove().end().find(".qbFacebook").parent().remove();
 			// Removes translate and find us on facebook buttons from the quickbar
+			$("#quickbar").find(".flagLink")
+										.remove()
+										.end()
+										.find(".qbFacebook")
+										.parent()
+										.remove();
 
-			$(".leftnav").find("li:first").find("a:last").text("Re-entry Initiatives");
 			// Rename to "Re-entry initiatives"
+			$(".leftnav").find("li:first")
+										.find("a:last")
+										.text("Re-entry Initiatives");
+
 		}
 
 		var dialogW = 600,
@@ -99,8 +119,8 @@
 		});
 
 	}
-
-	if (dcjs.isFacebook < 0 ) { // If we're NOT in facebook.
+	// If we're NOT in facebook.
+	if (dcjs.isFacebook < 0 ) {
 		// Never want isMobile to run if you're on Facebook.
 		if (isMobile) {
 
@@ -218,10 +238,11 @@
 				} // end if localNav
 			} // End if subNav
 
-			if (mobileToggler.length && !isBB) { // Moblie Toggler Setup
+			// Moblie Toggler Setup
+			if (mobileToggler.length && !isBB) {
 
-				mobileToggler.each(function(){ // Append the H5 text from each of the What's new headings to their child containers
-
+				mobileToggler.each(function(){
+					// Append the H5 text from each of the What's new headings to their child containers
 					var $this = $(this),
 						h5 = "<p><strong>" + $this.text() + "</strong></p>";
 
@@ -234,10 +255,11 @@
 					$this.toggleClass("onToggled").next(mobileTogglee).slideToggle();
 				});
 
-			} else { // Make BB's not have the toggle functionality cause BB's suck at the internet.
+			} else {
+				// Make BB's not have the toggle functionality cause BB's suck at the internet.
 				mobileTogglee.css("display", "inherit");
-
-			} // END MobileToggler
+			// END mobileToggler
+			}
 		//End if isMobile = true
 		} else {
 
@@ -293,7 +315,7 @@ $.fn.gaEventTracker = function(options) {
 };
 $("#mainContent a.gaEventTracker").gaEventTracker();
 
-$("#mainContent a[href$='.pdf'], #mainContent a[href$='.doc'], #mainContent a[href$='.docx'], #mainContent a[href$='.ppt'], #mainContent a[href$='.pptx'], #mainContent a[href$='.xls'], #mainContent a[href$='.xlsx']").each(gaDocumentTrack);
+$("#mainContent a[href$='.pdf'], #mainContent a[href$='.doc'], #mainContent a[href$='.docx'], #mainContent a[href$='.ppt'], #mainContent a[href$='.pptx'], #mainContent a[href$='.xls'], #mainContent a[href$='.xlsx'], #mainContent a[href$='.wmv']").each(gaDocumentTrack);
 
 
 /*****************************
@@ -405,6 +427,8 @@ function gaDocumentTrack() {
 	}
 
 })(jQuery);
+
+// Google analytics
 var _gaq = [['_setAccount', 'UA-15068527-1'], ['_trackPageview']];
 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
 g.src=('https:'===location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
